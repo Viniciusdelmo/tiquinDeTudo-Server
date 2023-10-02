@@ -1,5 +1,5 @@
 import categoriesRepository from "../repositories/categoriesRepository";
-//import productRepository from "../repositories/products";
+import productRepository from "../repositories/productsRepository";
 import { Category } from "../types";
 
 const getCategoriesNames = async () => {
@@ -46,7 +46,7 @@ const removeCategory = async (id: number) => {
   return { message: "Category deleted" };
 };
 
-/* const getProductsByCategory = async (categoryName: Category) => {
+ const getProductsByCategory = async (categoryName: Category) => {
   const id = await productRepository.selectProductCategoryId(categoryName);
 
   if (id.length === 0) {
@@ -73,7 +73,7 @@ const removeCategory = async (id: number) => {
   });
 
   return formattedProducts;
-}; */
+}; 
 
 export default {
   getCategoriesNames,
@@ -81,5 +81,5 @@ export default {
   createCategory,
   putCategory,
   removeCategory,
-  /* getProductsByCategory, */
+  getProductsByCategory
 };

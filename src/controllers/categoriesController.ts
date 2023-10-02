@@ -71,7 +71,7 @@ const remove = async (
   }
 };
 
-/* const showProductsByCategory = async (
+const showProductsByCategory = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -80,22 +80,24 @@ const remove = async (
     const name: string = req.params.category;
 
     const category = {
-      name
-    }
-    
-    const productsFromCategory =
-      await categoriesServices.getProductsByCategory(category);
+      name,
+    };
+
+    const productsFromCategory = await categoriesServices.getProductsByCategory(
+      category
+    );
 
     res.status(200).send(productsFromCategory);
   } catch (error: unknown) {
     next(error);
   }
-}; */
+};
 
 export default {
   index,
   show,
   insert,
   update,
-  remove /* showProductsByCategory  */,
+  remove,
+  showProductsByCategory,
 };

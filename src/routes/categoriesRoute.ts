@@ -10,6 +10,6 @@ categories.post("/", categoriesController.insert);
 categories.put("/:id", categoriesController.update);
 categories.delete("/:id", categoriesController.remove);
 
-/* category.get("/:category", categoriesController.showProductsByCategory); */
+ category.get("/:category", categoriesController.showProductsByCategory); 
 
 export { categories, category };
