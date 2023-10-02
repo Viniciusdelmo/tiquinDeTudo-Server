@@ -1,12 +1,13 @@
-import express, { Request, Response }  from "express"
+import express from "express";
+import { router } from "./routes";
 
 const app = express();
 
-app.get('/', (req: Request, res: Response) => {
-    res.send('Olá, mundo!');
-  });
+app.use(express.json());
 
-  const port = 8080;
+app.use("/", router);
+
+const port = 8080;
 app.listen(port, () => {
-  console.log(`Servidor rodando na porta ${port}`);
+  console.log(`Listening on ${port}`);
 });
